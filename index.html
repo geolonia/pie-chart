@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maps</title>
+<style>
+    html, body
+    {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+    }
+
+    .container
+    {
+        height: 100%;
+        width: 100%;
+        overflow: hidden;
+    }
+
+    #left
+    {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 50%;
+        z-index: 100;
+    }
+
+    #left .map
+    {
+        height: 100%;
+        width: 200%;
+    }
+
+    #right .map
+    {
+        height: 100%;
+        width: 100%;
+    }
+</style>
+</head>
+<body>
+    <div id="left" class="container">
+        <div 
+            class="map" 
+            data-gesture-handling="off"
+            data-style="geolonia/midnight"
+        ></div>   
+    </div>
+    <div id="right" class="container">
+        <div 
+            class="map" 
+            data-gesture-handling="off"
+            data-style="geolonia/red-planet"
+        ></div>
+    </div>
+
+    <script type="text/javascript" src="https://api.geolonia.com/v1/embed?geolonia-api-key=YOUR-API-KEY"></script>
+    <script src="./app.js"></script>
+</body>
+</html>
