@@ -1,0 +1,33 @@
+html, body
+{
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.container
+{
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+}
+
+#left
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%;
+    z-index: 100;
+}
+
+.map
+{
+    height: 100%;
+    width: 100%;
+}
+
+#left .map
+{
+    width: 200%;
+}
