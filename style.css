@@ -18,7 +18,13 @@ html, body
     top: 0;
     left: 0;
     width: 50%;
-    z-index: 100;
+    z-index: 2;
+    background-color: #141C39;
+}
+
+#right
+{
+    background-color: #5F1117;
 }
 
 .map
