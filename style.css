@@ -17,9 +17,10 @@ html, body
     position: absolute;
     top: 0;
     left: 0;
-    width: 50%;
+    width: 100%;
     z-index: 2;
     background-color: #141C39;
+    clip-path: polygon(0 0, 0% 100%, 100% 100%);
 }
 
 #right
@@ -35,5 +36,5 @@ html, body
 
 #left .map
 {
-    width: 200%;
+    width: 100%;
 }
