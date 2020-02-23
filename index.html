@@ -28,16 +28,15 @@
         z-index: 100;
     }
 
-    #left .map
-    {
-        height: 100%;
-        width: 200%;
-    }
-
-    #right .map
+    .map
     {
         height: 100%;
         width: 100%;
+    }
+
+    #left .map
+    {
+        width: 200%;
     }
 </style>
 </head>
@@ -46,6 +45,11 @@
         <div 
             class="map" 
             data-gesture-handling="off"
+            data-lat="35.65810422222222"
+            data-lng="139.74135747222223"
+            data-zoom="9"
+            data-marker="off"
+            data-navigation-control="off"
             data-style="geolonia/midnight"
         ></div>   
     </div>
@@ -53,6 +57,10 @@
         <div 
             class="map" 
             data-gesture-handling="off"
+            data-lat="35.65810422222222"
+            data-lng="139.74135747222223"
+            data-zoom="9"
+            data-marker="off"
             data-style="geolonia/red-planet"
         ></div>
     </div>
