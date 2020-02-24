@@ -41,7 +41,7 @@ html, body
   top: 8px;
   left: 8px;
   z-index: 100;
-  max-width: 90%;
+  max-width: 60%;
   background-color: rgba( 0, 0, 0, 0.7 );
   font-size: 80%;
   color: #ffffff;
