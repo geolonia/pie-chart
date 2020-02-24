@@ -48,15 +48,24 @@
     } )
 
     const addPopup = ( event ) => {
-      if ( event.features[0].properties.name ) {
+      const poi = event.features[0]
+
+      if ( poi.properties.name ) {
         event.target.getCanvas().style.cursor = 'pointer'
 
-        popupLeft.setLngLat( event.features[0].geometry.coordinates )
-          .setText( event.features[0].properties.name )
+        const table = `<table class="popup">
+          <tr><th>Class</th><td>${poi.properties.class}</td></tr>
+          <tr><th>Name</th><td>${poi.properties.name}</td></tr>
+          <tr><th>Lat</th><td>${poi.geometry.coordinates[1]}</td></tr>
+          <tr><th>Lng</th><td>${poi.geometry.coordinates[0]}</td></tr>
+          </table>`
+
+        popupLeft.setLngLat( poi.geometry.coordinates )
+          .setHTML( table )
           .addTo( leftMap )
 
-        popupRight.setLngLat( event.features[0].geometry.coordinates )
-          .setText( event.features[0].properties.name )
+        popupRight.setLngLat( poi.geometry.coordinates )
+          .setHTML( table )
           .addTo( rightMap )
       }
     }
