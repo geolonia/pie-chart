@@ -6,4 +6,4 @@
 
 Geolonia のベクトルタイルでは、あらかじめ存在する地物に対してイベントをトリガーしたり、それぞれの地物がもつプロパティーにアクセスできます。
 
-https://geolonia.github.io/demo/
+https://geolonia.github.io/night-and-day/
