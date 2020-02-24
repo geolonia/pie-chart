@@ -35,15 +35,10 @@ html, body
     width: 100%;
 }
 
-#description
+.forkme
 {
   position: absolute;
-  top: 8px;
-  left: 8px;
-  z-index: 100;
-  max-width: 60%;
-  background-color: rgba( 0, 0, 0, 0.7 );
-  font-size: 80%;
-  color: #ffffff;
-  padding: 12px;
+  top: 0;
+  left: 0;
+  z-index: 9999;
 }
