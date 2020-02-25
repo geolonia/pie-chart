@@ -64,9 +64,9 @@ html, body
 {
   background-color: #ffffff;
   position: absolute;
-  bottom: 8px;
+  bottom: 56px;
   left: 8px;
-  z-index: 999999;
+  z-index: 9999;
 }
 
 #percentage-wrap {
@@ -74,10 +74,10 @@ html, body
   align-items: center;
   justify-content: center;
   position: absolute;
-  bottom: 40px;
-  right: 8px;
-  width: 300px;
-  z-index: 999999;
+  bottom: 24px;
+  left: 8px;
+  width: 232px;
+  z-index: 9999;
 }
 
 #percentage {
