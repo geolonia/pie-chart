@@ -81,5 +81,9 @@
       map.on('mouseenter', 'poi', addPopup );
       map.on('mouseleave', 'poi', removePopup );
     } )
+
+    const right = document.querySelector( '#right')
+    right.style.setProperty( 'clip-path', 'polygon(0 0, 50% 0, 50% 50%, 100% 30%, 100% 100%, 0 100%)' )
+    right.style.setProperty( '-webkit-clip-path', 'polygon(0 0, 50% 0, 50% 50%, 100% 30%, 100% 100%, 0 100%)' )
   } )
 })()
