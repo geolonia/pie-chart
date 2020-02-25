@@ -159,12 +159,9 @@ function percentage2Clippath(percent, r = 0.5) {
       .getElementById( 'percentage' )
 
     slider.addEventListener( 'input', function( event ) {
-        renderClip( event.target.value )
-      } )
+      renderClip( event.target.value )
+    } )
 
-    console.log( slider.value )
-
-    // ready
     renderClip( slider.value )
   } )
 })()
