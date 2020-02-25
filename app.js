@@ -143,12 +143,24 @@ function percentage2Clippath(percent, r = 0.5) {
     } )
 
     const right = document.querySelector( '#right')
-    const clipPath = percentage2Clippath(0.5)
-    right.style.setProperty( 'clip-path', `polygon(${clipPath})` )
-    right.style.setProperty( '-webkit-clip-path', `polygon(${clipPath})` )
+
+    function renderClip(percentage = 0.5) {
+      const clipPath = percentage2Clippath(1 - percentage)
+      right.style.setProperty( 'clip-path', `polygon(${clipPath})` )
+      right.style.setProperty( '-webkit-clip-path', `polygon(${clipPath})` )
+    }
 
     AColorPicker.from( '#color-picker' ).on( 'change', ( picker, color ) => {
       leftMap.setPaintProperty( 'background', 'background-color', color );
     } )
+
+    document
+      .getElementById( 'percentage' )
+      .addEventListener( 'change', function( event ) {
+        renderClip( event.target.value )
+      } )
+
+    // ready
+    renderClip()
   } )
 })()
