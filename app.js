@@ -36,7 +36,6 @@ function percentage2Clippath(percent, r = 0.5) {
   } else if (is8thRadianOf(theta, 4)) {
     const x = 1 - r * (1 - tan(pi - theta))
     const y = 2 * r
-    console.log(rb)
     return clippath2str([lt, ct, c, [x, y], [0, 1]])
   } else if (is8thRadianOf(theta, 5)) {
     const x = r * (1 - tan(theta - pi))
@@ -145,14 +144,17 @@ function percentage2Clippath(percent, r = 0.5) {
 
     const right = document.querySelector( '#right')
 
-    function renderClip(percentage = 0.5) {
+    const renderClip = (percentage = 0.5) => {
       const clipPath = percentage2Clippath(percentage)
       right.style.setProperty( 'clip-path', `polygon(${clipPath})` )
       right.style.setProperty( '-webkit-clip-path', `polygon(${clipPath})` )
     }
 
     AColorPicker.from( '#color-picker' ).on( 'change', ( picker, color ) => {
+      const rgb = AColorPicker.parseColor( color, "rgb" );
+      const waterColor = [ rgb[0] * 0.4, rgb[1] * 0.4, rgb[2] * 0.4 ]
       leftMap.setPaintProperty( 'background', 'background-color', color );
+      leftMap.setPaintProperty( 'water', 'fill-color', AColorPicker.parseColor( waterColor, "rgbcss" ) );
     } )
 
     const slider = document
