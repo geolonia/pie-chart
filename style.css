@@ -38,11 +38,6 @@ html, body
   left: 0;
 }
 
-#right
-{
-
-}
-
 .map
 {
   height: 100%;
@@ -63,4 +58,13 @@ html, body
   bottom: 8px;
   right: 8px;
   color: #ffffff;
+}
+
+#color-picker
+{
+  background-color: #ffffff;
+  position: absolute;
+  bottom: 8px;
+  left: 8px;
+  z-index: 999999;
 }
