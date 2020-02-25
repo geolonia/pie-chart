@@ -56,3 +56,11 @@ html, body
   left: 0;
   z-index: 9999;
 }
+
+.copyright
+{
+  position: absolute;
+  bottom: 8px;
+  right: 8px;
+  color: #ffffff;
+}
