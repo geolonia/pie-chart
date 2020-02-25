@@ -68,3 +68,18 @@ html, body
   left: 8px;
   z-index: 999999;
 }
+
+#percentage-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  bottom: 40px;
+  right: 8px;
+  width: 300px;
+  z-index: 999999;
+}
+
+#percentage {
+  width: 100%;
+}
