@@ -9,4 +9,4 @@ https://geolonia.github.io/pie-chart/
 ## 使用しているスタイル
 
 * [geolonia/notebook](https://github.com/geolonia/notebook)
-* [geolonia/red-planet](https://github.com/geolonia/red-planet)
+* [geolonia/red-planet](https://github.com/geolonia/midnight)
