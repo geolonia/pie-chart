@@ -34,9 +34,10 @@ function percentage2Clippath(percent, r = 0.5) {
     const y = r * (1 + tan(theta - pi / 2))
     return clippath2str([lt, ct, c, [x, y], rb, lb])
   } else if (is8thRadianOf(theta, 4)) {
-    const x = r * (1 - tan(pi - theta))
+    const x = 1 - r * (1 - tan(pi - theta))
     const y = 2 * r
-    return clippath2str([lt, ct, c, [x, y], lb])
+    console.log(rb)
+    return clippath2str([lt, ct, c, [x, y], [0, 1]])
   } else if (is8thRadianOf(theta, 5)) {
     const x = r * (1 - tan(theta - pi))
     const y = 2 * r
@@ -145,7 +146,7 @@ function percentage2Clippath(percent, r = 0.5) {
     const right = document.querySelector( '#right')
 
     function renderClip(percentage = 0.5) {
-      const clipPath = percentage2Clippath(1 - percentage)
+      const clipPath = percentage2Clippath(percentage)
       right.style.setProperty( 'clip-path', `polygon(${clipPath})` )
       right.style.setProperty( '-webkit-clip-path', `polygon(${clipPath})` )
     }
@@ -154,13 +155,16 @@ function percentage2Clippath(percent, r = 0.5) {
       leftMap.setPaintProperty( 'background', 'background-color', color );
     } )
 
-    document
+    const slider = document
       .getElementById( 'percentage' )
-      .addEventListener( 'change', function( event ) {
+
+    slider.addEventListener( 'input', function( event ) {
         renderClip( event.target.value )
       } )
 
+    console.log( slider.value )
+
     // ready
-    renderClip()
+    renderClip( slider.value )
   } )
 })()
