@@ -1,3 +1,63 @@
+const pi = Math.PI
+const tan = Math.tan
+
+function is8thRadianOf(value, n) {
+  return pi * (n - 1) / 4 <= value && value <= pi * n / 4
+}
+
+function clippath2str(patharray) {
+  return patharray.map(function(point) {
+    return point.map(function(value) {
+      return (100 * value + '%')
+    }).join(' ')
+  }).join(', ')
+}
+
+function percentage2Clippath(percent, r = 0.5) {
+  const theta = percent * 2 * pi
+  const lt = [0, 0]
+  const ct = [r, 0]
+  const rt = [2 * r, 0]
+  const rb = [2 * r, 2 * r]
+  const lb = [0, 2 * r]
+  const c = [r, r]
+  if (is8thRadianOf(theta, 1)) {
+    const x = r * (tan(theta) + 1)
+    const y = 0
+    return clippath2str([lt, ct, c, [x, y], rt, rb, lb])
+  } else if (is8thRadianOf(theta, 2)) {
+    const x = 2 * r
+    const y = r * (1 - tan(pi / 2 - theta))
+    return clippath2str([lt, ct, c, [x, y], rb, lb])
+  } else if (is8thRadianOf(theta, 3)) {
+    const x = 2 * r
+    const y = r * (1 + tan(theta - pi / 2))
+    return clippath2str([lt, ct, c, [x, y], rb, lb])
+  } else if (is8thRadianOf(theta, 4)) {
+    const x = r * (1 - tan(pi - theta))
+    const y = 2 * r
+    return clippath2str([lt, ct, c, [x, y], lb])
+  } else if (is8thRadianOf(theta, 5)) {
+    const x = r * (1 - tan(theta - pi))
+    const y = 2 * r
+    return clippath2str([lt, ct, c, [x, y], lb])
+  } else if (is8thRadianOf(theta, 6)) {
+     const x = 0
+     const y = r * (1 + tan(pi * 3 / 2 - theta))
+     return clippath2str([lt, ct, c, [x, y]])
+  } else if (is8thRadianOf(theta, 7)) {
+     const x = 0
+     const y = r * (1 - tan(theta - pi * 3 / 2))
+     return clippath2str([lt, ct, c, [x, y]])
+  } else if (is8thRadianOf(theta, 8)) {
+     const x = r * (1 - tan(2 * pi - theta))
+     const y = 0
+     return clippath2str([ct, c, [x, y]])
+  }else {
+    throw new Error("invalid value");
+  }
+};
+
 (function(){
   const rightMap = new geolonia.Map( document.querySelector( '#right .map' ) )
 
@@ -83,7 +143,7 @@
     } )
 
     const right = document.querySelector( '#right')
-    const clipPath = '0 0, 50% 0, 50% 50%, 100% 30%, 100% 100%, 0 100%'
+    const clipPath = percentage2Clippath(0.5)
     right.style.setProperty( 'clip-path', `polygon(${clipPath})` )
     right.style.setProperty( '-webkit-clip-path', `polygon(${clipPath})` )
 
