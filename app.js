@@ -152,7 +152,7 @@ function percentage2Clippath(percent, r = 0.5) {
 
     AColorPicker.from( '#color-picker' ).on( 'change', ( picker, color ) => {
       const rgb = AColorPicker.parseColor( color, "rgb" );
-      const waterColor = [ rgb[0] * 0.4, rgb[1] * 0.4, rgb[2] * 0.4 ]
+      const waterColor = rgb.map( value => value * 0.5 )
       leftMap.setPaintProperty( 'background', 'background-color', color );
       leftMap.setPaintProperty( 'water', 'fill-color', AColorPicker.parseColor( waterColor, "rgbcss" ) );
       leftMap.setPaintProperty( 'waterway_tunnel', 'line-color', AColorPicker.parseColor( waterColor, "rgbcss" ) );
