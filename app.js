@@ -155,6 +155,8 @@ function percentage2Clippath(percent, r = 0.5) {
       const waterColor = [ rgb[0] * 0.4, rgb[1] * 0.4, rgb[2] * 0.4 ]
       leftMap.setPaintProperty( 'background', 'background-color', color );
       leftMap.setPaintProperty( 'water', 'fill-color', AColorPicker.parseColor( waterColor, "rgbcss" ) );
+      leftMap.setPaintProperty( 'waterway_tunnel', 'line-color', AColorPicker.parseColor( waterColor, "rgbcss" ) );
+      leftMap.setPaintProperty( 'waterway', 'line-color', AColorPicker.parseColor( waterColor, "rgbcss" ) );
     } )
 
     const slider = document
