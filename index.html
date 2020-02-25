@@ -1,42 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta property="og:image" content="https://www.evernote.com/l/ABUvLxkJ4T1FAZ71j2ogRS54eVm7nQ2nmtgB/image.png" />
-    <meta name="twitter:image:src" content="https://www.evernote.com/l/ABUvLxkJ4T1FAZ71j2ogRS54eVm7nQ2nmtgB/image.png" />
-    <link rel="stylesheet" href="./style.css">
-    <title>Night and Day</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta property="og:image" content="https://www.evernote.com/l/ABUvLxkJ4T1FAZ71j2ogRS54eVm7nQ2nmtgB/image.png" />
+  <meta name="twitter:image:src" content="https://www.evernote.com/l/ABUvLxkJ4T1FAZ71j2ogRS54eVm7nQ2nmtgB/image.png" />
+  <link rel="stylesheet" href="./style.css">
+  <title>Night and Day</title>
 </head>
 <body>
+  <div class="outer">
     <div id="left" class="container">
-        <div
-            class="map"
-            data-gesture-handling="off"
-            data-lat="35.65810422222222"
-            data-lng="139.74135747222223"
-            data-zoom="4"
-            data-marker="off"
-            data-navigation-control="off"
-            data-style="geolonia/midnight"
-        ></div>
+      <div
+        class="map"
+        data-gesture-handling="off"
+        data-lat="35.65810422222222"
+        data-lng="139.74135747222223"
+        data-zoom="4"
+        data-marker="off"
+        data-navigation-control="off"
+        data-style="geolonia/red-planet"
+      ></div>
     </div>
     <div id="right" class="container">
-        <div
-            class="map"
-            data-gesture-handling="off"
-            data-lat="35.65810422222222"
-            data-lng="139.74135747222223"
-            data-zoom="4"
-            data-marker="off"
-            data-style="geolonia/notebook"
-            data-hash="on"
-        ></div>
+      <div
+        class="map"
+        data-gesture-handling="off"
+        data-lat="35.65810422222222"
+        data-lng="139.74135747222223"
+        data-zoom="4"
+        data-marker="off"
+        data-style="geolonia/midnight"
+        data-navigation-control="off"
+        data-hash="on"
+      ></div>
     </div>
+  </div>
 
-    <a class="forkme" href="https://github.com/geolonia/night-and-day"><img width="149" height="149" src="https://github.blog/wp-content/uploads/2008/12/forkme_left_darkblue_121621.png?resize=149%2C149" class="attachment-full size-full" alt="Fork me on GitHub" data-recalc-dims="1"></a>
+  <a class="forkme" href="https://github.com/geolonia/night-and-day"><img width="149" height="149" src="https://github.blog/wp-content/uploads/2008/12/forkme_left_darkblue_121621.png?resize=149%2C149" class="attachment-full size-full" alt="Fork me on GitHub" data-recalc-dims="1"></a>
 
-    <script type="text/javascript" src="https://api.geolonia.com/v1/embed?geolonia-api-key=YOUR-API-KEY"></script>
-    <script src="./app.js"></script>
+  <script type="text/javascript" src="https://api.geolonia.com/v1/embed?geolonia-api-key=YOUR-API-KEY"></script>
+  <script src="./app.js"></script>
 </body>
 </html>
