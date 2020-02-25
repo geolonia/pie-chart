@@ -83,7 +83,8 @@
     } )
 
     const right = document.querySelector( '#right')
-    right.style.setProperty( 'clip-path', 'polygon(0 0, 50% 0, 50% 50%, 100% 30%, 100% 100%, 0 100%)' )
-    right.style.setProperty( '-webkit-clip-path', 'polygon(0 0, 50% 0, 50% 50%, 100% 30%, 100% 100%, 0 100%)' )
+    const clipPath = '0 0, 50% 0, 50% 50%, 100% 30%, 100% 100%, 0 100%'
+    right.style.setProperty( 'clip-path', `polygon(${clipPath})` )
+    right.style.setProperty( '-webkit-clip-path', `polygon(${clipPath})` )
   } )
 })()
