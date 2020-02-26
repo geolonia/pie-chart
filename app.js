@@ -1,19 +1,19 @@
 const pi = Math.PI
 const tan = Math.tan
 
-function is8thRadianOf(value, n) {
+const is8thRadianOf = ( value, n ) => {
   return pi * (n - 1) / 4 <= value && value <= pi * n / 4
 }
 
-function clippath2str(patharray) {
-  return patharray.map(function(point) {
-    return point.map(function(value) {
-      return (100 * value + '%')
-    }).join(' ')
-  }).join(', ')
+const clippath2str = ( patharray ) => {
+  return patharray.map( ( point ) => {
+    return point.map( ( value ) => {
+      return ( 100 * value + '%' )
+    } ).join( ' ' )
+  } ).join( ', ' )
 }
 
-function percentage2Clippath(percent, r = 0.5) {
+const percentage2Clippath = ( percent, r = 0.5 ) => {
   const theta = percent * 2 * pi
   const lt = [0, 0]
   const ct = [r, 0]
@@ -21,44 +21,44 @@ function percentage2Clippath(percent, r = 0.5) {
   const rb = [2 * r, 2 * r]
   const lb = [0, 2 * r]
   const c = [r, r]
-  if (is8thRadianOf(theta, 1)) {
-    const x = r * (tan(theta) + 1)
+  if ( is8thRadianOf( theta, 1)) {
+    const x = r * ( tan( theta) + 1)
     const y = 0
-    return clippath2str([lt, ct, c, [x, y], rt, rb, lb])
-  } else if (is8thRadianOf(theta, 2)) {
+    return clippath2str( [lt, ct, c, [x, y], rt, rb, lb])
+  } else if ( is8thRadianOf( theta, 2)) {
     const x = 2 * r
-    const y = r * (1 - tan(pi / 2 - theta))
-    return clippath2str([lt, ct, c, [x, y], rb, lb])
-  } else if (is8thRadianOf(theta, 3)) {
+    const y = r * ( 1 - tan( pi / 2 - theta))
+    return clippath2str( [lt, ct, c, [x, y], rb, lb])
+  } else if ( is8thRadianOf( theta, 3)) {
     const x = 2 * r
-    const y = r * (1 + tan(theta - pi / 2))
-    return clippath2str([lt, ct, c, [x, y], rb, lb])
-  } else if (is8thRadianOf(theta, 4)) {
-    const x = 1 - r * (1 - tan(pi - theta))
+    const y = r * ( 1 + tan( theta - pi / 2))
+    return clippath2str( [lt, ct, c, [x, y], rb, lb])
+  } else if ( is8thRadianOf( theta, 4)) {
+    const x = 1 - r * ( 1 - tan( pi - theta))
     const y = 2 * r
-    return clippath2str([lt, ct, c, [x, y], [0, 1]])
-  } else if (is8thRadianOf(theta, 5)) {
-    const x = r * (1 - tan(theta - pi))
+    return clippath2str( [lt, ct, c, [x, y], [0, 1]])
+  } else if ( is8thRadianOf( theta, 5)) {
+    const x = r * ( 1 - tan( theta - pi))
     const y = 2 * r
-    return clippath2str([lt, ct, c, [x, y], lb])
-  } else if (is8thRadianOf(theta, 6)) {
+    return clippath2str( [lt, ct, c, [x, y], lb])
+  } else if ( is8thRadianOf( theta, 6)) {
      const x = 0
-     const y = r * (1 + tan(pi * 3 / 2 - theta))
-     return clippath2str([lt, ct, c, [x, y]])
-  } else if (is8thRadianOf(theta, 7)) {
+     const y = r * ( 1 + tan( pi * 3 / 2 - theta))
+     return clippath2str( [lt, ct, c, [x, y]])
+  } else if ( is8thRadianOf( theta, 7)) {
      const x = 0
-     const y = r * (1 - tan(theta - pi * 3 / 2))
-     return clippath2str([lt, ct, c, [x, y]])
-  } else if (is8thRadianOf(theta, 8)) {
-     const x = r * (1 - tan(2 * pi - theta))
+     const y = r * ( 1 - tan( theta - pi * 3 / 2))
+     return clippath2str( [lt, ct, c, [x, y]])
+  } else if ( is8thRadianOf( theta, 8)) {
+     const x = r * ( 1 - tan( 2 * pi - theta))
      const y = 0
-     return clippath2str([ct, c, [x, y]])
+     return clippath2str( [ct, c, [x, y]])
   }else {
-    throw new Error("invalid value");
+    throw new Error( "invalid value");
   }
 };
 
-(function(){
+( () => {
   const rightMap = new geolonia.Map( document.querySelector( '#right .map' ) )
 
   rightMap.on( 'load', () => {
@@ -168,4 +168,4 @@ function percentage2Clippath(percent, r = 0.5) {
 
     renderClip( slider.value )
   } )
-})()
+} )()
