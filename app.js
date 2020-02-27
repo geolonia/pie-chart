@@ -96,12 +96,12 @@ rightMap.on( 'load', () => {
   rightMap.on( 'move', syncRightMap )
   leftMap.on( 'move', syncLeftMap )
 
-  const popupLeft = new mapboxgl.Popup( {
+  const popupLeft = new geolonia.Popup( {
     closeButton: false,
     closeOnClick: false
   } )
 
-  const popupRight = new mapboxgl.Popup( {
+  const popupRight = new geolonia.Popup( {
     closeButton: false,
     closeOnClick: false
   } )
