@@ -52,14 +52,6 @@ html, body
   z-index: 9999;
 }
 
-.copyright
-{
-  position: absolute;
-  bottom: 8px;
-  right: 8px;
-  color: #ffffff;
-}
-
 #color-picker
 {
   position: absolute;
@@ -90,4 +82,17 @@ input[type=range] {
   width: 100%;
   border-radius: 8px;
   outline: 0;
+}
+
+.copyright
+{
+  position: absolute;
+  bottom: 8px;
+  right: 8px;
+  color: #ffffff;
+}
+
+.copyright a
+{
+  color: #ffffff;
 }

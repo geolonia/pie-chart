@@ -151,7 +151,7 @@ rightMap.on( 'load', () => {
 
   AColorPicker.from( '#color-picker' ).on( 'change', ( picker, color ) => {
     const rgb = AColorPicker.parseColor( color, "rgb" );
-    const waterColor = rgb.map( value => value * 0.5 )
+    const waterColor = rgb.map( value => value * 0.7 )
     leftMap.setPaintProperty( 'background', 'background-color', color );
     leftMap.setPaintProperty( 'water', 'fill-color', AColorPicker.parseColor( waterColor, "rgbcss" ) );
     leftMap.setPaintProperty( 'waterway_tunnel', 'line-color', AColorPicker.parseColor( waterColor, "rgbcss" ) );
